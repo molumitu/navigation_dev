@@ -1,0 +1,231 @@
+<routes>
+    
+    
+
+
+
+
+    <vType accel="2.6" apparentDecel="4.5" carFollowModel="Krauss" color="yellow" decel="4.5" emergencyDecel="4.5" guiShape="passenger" id="car_1" impatience="0" laneChangeModel="SL2015" latAlignment="center" lcLaneDiscipline="1" lcSigma="0.5" length="4.754264" maxSpeed="8" maxSpeedLat="1" minGap="2.5" minGapLat="0.1" sigma="0.5" speedDev="0" tau="1" vClass="passenger" width="1.596668" />
+	<vType accel="2.6" apparentDecel="4.5" carFollowModel="Krauss" color="62,62,62,235" decel="4.5" emergencyDecel="4.5" guiShape="passenger" id="car_2" impatience="0" laneChangeModel="SL2015" latAlignment="center" lcLaneDiscipline="1" lcSigma="0.5" length="4.173896" maxSpeed="8" maxSpeedLat="1" minGap="2.5" minGapLat="0.1" sigma="0.5" speedDev="0" tau="1" vClass="passenger" width="1.77515" />
+	<vType accel="2" apparentDecel="4" carFollowModel="Krauss" color="green" decel="4.5" emergencyDecel="4.5" guiShape="truck" id="truck_1" impatience="0" laneChangeModel="SL2015" latAlignment="center" lcLaneDiscipline="1" lcSigma="0.5" length="6.174" maxSpeed="6" maxSpeedLat="1" minGap="3" minGapLat="0.1" sigma="0.5" speedDev="0" tau="1" vClass="passenger" width="2.166908" />
+	<vType accel="2.6" apparentDecel="4.5" carFollowModel="Krauss" color="white" decel="4.5" emergencyDecel="4.5" guiShape="passenger" id="car_3" impatience="0" laneChangeModel="SL2015" latAlignment="center" lcLaneDiscipline="1" lcSigma="0.5" length="4.173896" maxSpeed="7" maxSpeedLat="1" minGap="2.5" minGapLat="0.1" sigma="0.5" speedDev="0" tau="1" vClass="passenger" width="1.77515" />
+	<vType accel="2.6" apparentDecel="4.5" carFollowModel="Krauss" color="magenta" decel="4.5" emergencyDecel="4.5" guiShape="passenger" id="car_4" impatience="0" laneChangeModel="SL2015" latAlignment="center" lcLaneDiscipline="1" lcSigma="0.5" length="4.173896" maxSpeed="7" maxSpeedLat="1" minGap="2.5" minGapLat="0.1" sigma="0.5" speedDev="0" tau="1" vClass="passenger" width="1.77515" />
+
+	<vType accel="2.6" apparentDecel="4.5" carFollowModel="Krauss" color="0,128,0,255" decel="5" emergencyDecel="5" guiShape="motorcycle" id="motorbike_1" impatience="0" laneChangeModel="SL2015" latAlignment="center" lcLaneDiscipline="1" lcSigma="0.5" length="2.085" maxSpeed="4" maxSpeedLat="1" minGap="1.5" minGapLat="0.1" sigma="0.5" speedDev="0" tau="1" vClass="passenger" width="0.715" />
+	<vType accel="2.6" apparentDecel="4.5" carFollowModel="Krauss" color="0,128,0,255" decel="5" emergencyDecel="5" guiShape="motorcycle" id="motorbike_2" impatience="0" laneChangeModel="SL2015" latAlignment="right" lcLaneDiscipline="1" lcSigma="0.5" length="2.085" maxSpeed="4" maxSpeedLat="1" minGap="1.5" minGapLat="0.1" sigma="0.5" speedDev="0" tau="1" vClass="passenger" width="0.715" />
+	<vType accel="2.6" apparentDecel="4.5" carFollowModel="Krauss" color="0,128,0,255" decel="5" emergencyDecel="5" guiShape="motorcycle" id="motorbike_3" impatience="0" laneChangeModel="SL2015" latAlignment="left" lcLaneDiscipline="1" lcSigma="0.5" length="2.085" maxSpeed="4" maxSpeedLat="1" minGap="1.5" minGapLat="0.1" sigma="0.5" speedDev="0" tau="1" vClass="passenger" width="0.715" />
+	<vType accel="3.5" color="1,0,1" decel="2.2" guiShape="passenger/wagon" id="self_car" length="4.5" maxSpeed="30" sigma="1.0" width="1.8" />
+
+    <vType id="person_1" latAlignment="right" length="0.21" maxSpeed="2" vClass="pedestrian" width="0.48" />
+	<vType id="person_2" latAlignment="center" length="0.21" maxSpeed="1.59" vClass="pedestrian" width="0.48" />
+	<vType id="person_3" latAlignment="arbitrary" length="0.21" maxSpeed="1.99" vClass="pedestrian" width="0.48" />
+	<vType id="bicycle_1" latAlignment="right" lcSigma="0.5" length="1" maxSpeed="2.39" vClass="bicycle" width="0.48" />
+	<vType id="bicycle_2" latAlignment="arbitrary" lcSigma="0.5" length="1" maxSpeed="2.39" vClass="bicycle" width="0.48" />
+	<vType id="bicycle_3" latAlignment="arbitrary" lcSigma="0.5" length="1" maxSpeed="2.39" vClass="bicycle" width="0.48" />
+	<route color="yellow" edges="gneE664 gneE665 gneE665.103 gneE665.254 gneE665.254.65 gneE837 gneE837.181 gneE837.196 gneE469.241 gneE461 gneE461.99 gneE461.204 gneE464 chengfu_out " id="self_route" />
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancunbei_in" id="carflow_02" to="qinghuanan_out" type="car_1" vehsPerHour="200" via="gneE665" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancunbei_in" id="carflow_04" to="zhongguancundong1_out" type="car_1" vehsPerHour="200" via="gneE665 gneE469.241" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancunbei_in" id="carflow_05" to="heqing_out" type="car_1" vehsPerHour="200" via="gneE461.204" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancunbei_in" id="carflow_06" to="zhongguancunnansanjie_out" type="car_1" vehsPerHour="200" via="gneE246" />
+	   <flow beg="0" departLane="best" from="zhongguancunbei_in" id="carflow_14" to="zhongguancundajie_out" type="car_1" vehsPerHour="400" via="gneE246" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancunbei_in" id="carflow_15" to="beisihuanxifu_out" type="car_3" vehsPerHour="100" via="gneE246" />
+
+
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancunbei_in" id="bicycleflow_1" to="haidian_out" type="bicycle_1" vehsPerHour="50" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancunbei_in" id="bicycleflow_1_" to="beisihuanxifu_out" type="bicycle_1" vehsPerHour="50" />
+
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancunbei_in" id="pedestrianflow_1" to="haidian_out" type="person_1" vehsPerHour="50" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancunbei_in" id="pedestrianflow_2" to="qinghuanan_out" type="person_1" vehsPerHour="50" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancunbei_in" id="pedestrianflow_1_" to="beisihuanxifu_out" type="person_1" vehsPerHour="50" />
+
+
+
+
+
+       <flow arrivalLane="current" beg="0" departLane="best" from="qinghuanan_in" id="carflow_16" to="zhongguancunbei_out" type="car_1" vehsPerHour="100" />
+       <flow arrivalLane="current" beg="0" departLane="best" from="qinghuanan_in" id="carflow_19" to="zhongguancundong1_out" type="car_1" vehsPerHour="200" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="qinghuanan_in" id="carflow_28" to="zhongguancunnansanjie_out" type="car_3" vehsPerHour="100" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="qinghuanan_in" id="carflow_29" to="chengfu_out" type="car_3" vehsPerHour="400" via="gneE461.204" />
+
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancunbei_in" id="bicycleflow_3" to="zhongguancunbei_out" type="bicycle_1" vehsPerHour="50" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancunbei_in" id="bicycleflow_4" to="haidian_out" type="bicycle_1" vehsPerHour="50" />
+
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancunbei_in" id="pedestrianflow_3" to="zhongguancunbei_out" type="person_1" vehsPerHour="50" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancunbei_in" id="pedestrianflow_4" to="haidian_out" type="person_1" vehsPerHour="50" />
+
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="xuetang_in" id="carflow_31" to="zhongguancunbei_out" type="car_2" vehsPerHour="100" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="xuetang_in" id="carflow_32" to="qinghuanan_out" type="car_1" vehsPerHour="200" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="xuetang_in" id="carflow_33" to="heqing_out" type="car_1" vehsPerHour="100" via="gneE461.204" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="xuetang_in" id="carflow_34" to="zhongguancundong2_out" type="car_2" vehsPerHour="100" via="gneE837.196" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="xuetang_in" id="carflow_35" to="beisihuanxifu_out" type="car_2" vehsPerHour="100" />
+
+
+
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="xuetang_in" id="pedestrianflow_5_" to="qinghuanan_out" type="person_1" vehsPerHour="50" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="xuetang_in" id="pedestrianflow_5" to="zhongguancundong1_out" type="person_1" vehsPerHour="50" />
+
+
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundong1_in" id="carflow_196" to="zhongguancunbei_out" type="car_2" vehsPerHour="200" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundong1_in" id="carflow_198" to="xuetang_out" type="car_3" vehsPerHour="400" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundong1_in" id="carflow_200" to="heqing_out" type="car_1" vehsPerHour="50" via="gneE461.204" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundong1_in" id="carflow_202" to="chengfu_out" type="car_3" vehsPerHour="100" via="gneE461.204" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundong1_in" id="carflow_203" to="beisihuanzhongfu_out" type="car_3" vehsPerHour="200" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundong1_in" id="carflow_207" to="zhongguancundong2_out" type="car_3" vehsPerHour="150" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundong1_in" id="carflow_208" to="zhongguancundajie_out" type="car_3" vehsPerHour="400" via="gneE839 gneE661.324 gneE246" />
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundong1_in" id="pedestrianflow_200" to="heqing_out" type="person_1" vehsPerHour="50" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundong1_in" id="pedestrianflow_6" to="zhongguancundong2_out" type="person_1" vehsPerHour="50" />
+
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundong1_in" id="bicycleflow_6" to="heqing_out" type="bicycle_1" vehsPerHour="20" />
+   	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundong1_in" id="bicycleflow_7" to="zhongguancundong2_out" type="bicycle_1" vehsPerHour="20" />
+
+
+
+
+
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="heqing_in" id="carflow_47" to="qinghuanan_out" type="car_1" vehsPerHour="100" via="gneE462" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="heqing_in" id="carflow_48" to="xuetang_out" type="car_1" vehsPerHour="300" via="gneE462" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="heqing_in" id="carflow_52" to="chengfu_out" type="car_1" vehsPerHour="400" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="heqing_in" id="carflow_54" to="zhongguancundong2_out" type="car_1" vehsPerHour="300" via="gneE462.171.50" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="heqing_in" id="carflow_55" to="zhongguancundong1_out" type="car_1" vehsPerHour="200" via="gneE44" />
+
+
+
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="heqing_in" id="pedestrianflow_8" to="zhongguancundong1_out" type="person_1" vehsPerHour="50" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="heqing_in" id="pedestrianflow_9" to="chengfu_out" type="person_1" vehsPerHour="50" />4
+	   <flow arrivalLane="current" beg="0" departLane="best" from="heqing_in" id="pedestrianflow_10" to="zhongguancundong2_out" type="person_1" vehsPerHour="50" via="gneE44" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="heqing_in" id="pedestrianflow_11" to="qinghuanan_out" type="person_1" vehsPerHour="50" />
+
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="heqing_in" id="bicycleflow_8" to="zhongguancundong1_out" type="bicycle_1" vehsPerHour="20" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="heqing_in" id="bicycleflow_9" to="chengfu_out" type="bicycle_1" vehsPerHour="20" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="heqing_in" id="bicycleflow_10" to="zhongguancundong2_out" type="bicycle_1" vehsPerHour="20" />10
+	   <flow arrivalLane="current" beg="0" departLane="best" from="heqing_in" id="bicycleflow_11" to="xuetang_out" type="bicycle_1" vehsPerHour="20" />10
+
+
+
+
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="chengfu_in" id="carflow_80" to="heqing_out" type="car_3" vehsPerHour="200" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="chengfu_in" id="carflow_81" to="xuetang_out" type="car_3" vehsPerHour="100" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="chengfu_in" id="carflow_84" to="zhongguancundong1_out" type="car_1" vehsPerHour="200" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="chengfu_in" id="carflow_87" to="zhongguancundong2_out" type="car_1" vehsPerHour="200" via="gneE44" />
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="chengfu_in" id="pedestrianflow_65" to="heqing_out" type="person_1" vehsPerHour="10" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="chengfu_in" id="pedestrianflow_67" to="zhongguancundong1_out" type="person_1" vehsPerHour="10" />
+
+
+
+
+
+
+
+
+
+
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="beisihuanzhongfu_in" id="carflow_124" to="zhongguancundong1_out" type="car_2" vehsPerHour="300" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="beisihuanzhongfu_in" id="carflow_127" to="zhongguancundong1_out" type="car_2" vehsPerHour="150" via="239166839" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="beisihuanzhongfu_in" id="carflow_125" to="chengfu_out" type="car_2" vehsPerHour="50" via="239166839" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="beisihuanzhongfu_in" id="carflow_126" to="heqing_out" type="car_2" vehsPerHour="50" via="239166839" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="beisihuanzhongfu_in" id="carflow_132" to="zhongguancundong2_out" type="car_3" vehsPerHour="350" />
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="beisihuanzhongfu_in" id="carflow_134" to="zhongguancundajie_out" type="car_1" vehsPerHour="200" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="beisihuanzhongfu_in" id="carflow_135" to="beisihuanxifu_out" type="car_1" vehsPerHour="200" />
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="beisihuanzhongfu_in" id="pedestrianflow_68" to="heqing_out" type="person_1" vehsPerHour="20" via="24459456#2" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="beisihuanzhongfu_in" id="pedestrianflow_69" to="zhongguancundong2_out" type="person_1" vehsPerHour="20" />
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="beisihuanzhongfu_in" id="bicycleflow_12" to="heqing_out" type="bicycle_1" vehsPerHour="50" via="24459456#2" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="beisihuanzhongfu_in" id="bicycleflow_13" to="zhongguancundong2_out" type="bicycle_1" vehsPerHour="50" />
+
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundong2_in" id="carflow_152" to="qinghuanan_out" type="car_1" vehsPerHour="70" via="gneE470" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundong2_in" id="carflow_154" to="zhongguancundong1_out" type="car_1" vehsPerHour="250" />
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundong2_in" id="carflow_164" to="beisihuanxifu_out" type="car_1" vehsPerHour="300" />
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundong2_in" id="pedestrianflow_70" to="heqing_out" type="person_1" vehsPerHour="20" via="24459456#2" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundong2_in" id="pedestrianflow_71" to="zhongguancundong1_out" type="person_1" vehsPerHour="20" />
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundong2_in" id="bicycleflow_14" to="zhongguancundong1_out" type="bicycle_1" vehsPerHour="50" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundong2_in" id="bicycleflow_15" to="beisihuanxifu_out" type="bicycle_1" vehsPerHour="50" />
+
+
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancunnansanjie_in" id="carflow_166" to="zhongguancunbei_out" type="car_3" vehsPerHour="100" via="gneE650" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancunnansanjie_in" id="carflow_169_" to="zhongguancundong1_out" type="car_1" vehsPerHour="100" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancunnansanjie_in" id="carflow_179" to="zhongguancundajie_out" type="car_2" vehsPerHour="100" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancunnansanjie_in" id="carflow_180" to="beisihuanzhongfu_out" type="car_1" vehsPerHour="200" />
+
+
+
+
+
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundajie_in" id="carflow_181" to="zhongguancunbei_out" type="car_3" vehsPerHour="700" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundajie_in" id="carflow_182" to="chengfu_out" type="car_3" vehsPerHour="150" via="gneE431.525 gneE161" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundajie_in" id="carflow_184" to="zhongguancundong1_out" type="car_2" vehsPerHour="150" via="gneE420.71" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundajie_in" id="carflow_189" to="beisihuanzhongfu_out" type="car_1" vehsPerHour="50" via="gneE431.525" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundajie_in" id="carflow_190" to="zhongguancunnansanjie_out" type="car_1" vehsPerHour="300" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundajie_in" id="carflow_192" to="zhongguancundong2_out" type="car_2" vehsPerHour="200" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="zhongguancundajie_in" id="carflow_195" to="beisihuanxifu_out" type="car_1" vehsPerHour="400" />
+
+
+
+
+
+
+
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="beisihuanxifu_in" id="carflow_213" to="zhongguancunbei_out" type="car_1" vehsPerHour="400" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="beisihuanxifu_in" id="carflow_215" to="beisihuanzhongfu_out" type="car_1" vehsPerHour="300" via="gneE431.113 gneE431.525" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="beisihuanxifu_in" id="carflow_216" to="zhongguancunnansanjie_out" type="car_1" vehsPerHour="300" via="gneE431.113 gneE431.525" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="beisihuanxifu_in" id="carflow_217" to="zhongguancundajie_out" type="car_1" vehsPerHour="400" />
+
+
+
+	   <flow arrivalLane="current" beg="0" departLane="best" from="haidian_in" id="carflow_221" to="zhongguancundajie_out" type="car_1" vehsPerHour="200" />
+	   <flow arrivalLane="2" beg="0" departLane="best" from="haidian_in" id="carflow_222" to="beisihuanxifu_out" type="car_1" vehsPerHour="100" />
+	   <flow arrivalLane="current" beg="0" departLane="best" from="haidian_in" id="carflow_223" to="zhongguancunnansanjie_out" type="car_1" vehsPerHour="100" />
+
+
+
+
+	
+
+
+
+</routes>

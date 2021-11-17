@@ -1,0 +1,10 @@
+<configuration>
+	<input>
+	<net-file value="grid-map.net.xml"/>
+	<route-files value="grid-map-traffic.rou.xml"/>
+	<lateral-resolution value="0.4"/>
+</input>
+<gui_only>
+	<gui-settings-file value="grid-map-viewsetting.xml"/>
+</gui_only>
+</configuration>

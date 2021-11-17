@@ -1,0 +1,11 @@
+<configuration>
+	<input>
+	    <net-file value="grid-map.net.xml"/>
+	    <route-files value="grid-map-traffic_Mixed_400.rou.xml"/>
+    </input>
+    <time>
+	    <begin value ="0"/>
+	    <step-length value ="1"/>
+	</time>
+	    <lanechange.duration value ="3"/>
+</configuration>
