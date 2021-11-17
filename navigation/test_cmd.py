@@ -1,7 +1,7 @@
 import os
 import xml.etree.ElementTree as ET
 
-net_path = R'Map4_Tsinghua_Intersection\grid-map.net.xml'
+net_path = R'map\Map4_Tsinghua_Intersection\grid-map.net.xml'
 trip_path = R'trips.xml'
 
 start="gneE664"

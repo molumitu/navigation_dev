@@ -17,7 +17,7 @@ import sumolib
 from sumolib import checkBinary
 import traci
 dirname = os.path.dirname(__file__)
-SUMOCFG_DIR = dirname + "/Map4_Tsinghua_Intersection/configuration.sumocfg"
+SUMOCFG_DIR = dirname + "/map/Map4_Tsinghua_Intersection/configuration.sumocfg"
 SUMO_BINARY = checkBinary('sumo-gui')
 import warnings
 warnings.filterwarnings("ignore")
@@ -32,10 +32,10 @@ class Navigation():
         start="gneE664"
         end="chengfu_out"
         self.in_junction = False
-        self.net_path = R'Map4_Tsinghua_Intersection\grid-map.net.xml'
-        self.rou_path = R'Map4_Tsinghua_Intersection\grid-map-traffic.rou.xml'
-        self.trip_path = R'trips.xml'
-        self.result_path = R'result.rou.xml'
+        self.net_path = R'map\Map4_Tsinghua_Intersection\grid-map.net.xml'
+        self.rou_path = R'map\Map4_Tsinghua_Intersection\grid-map-traffic.rou.xml'
+        self.trip_path = R'navigation\trips.xml'
+        self.result_path = R'navigation\result.rou.xml'
 
         self._init_traci_without_gui()
         self.edge_list = self._get_edges(start, end)
@@ -307,7 +307,7 @@ class Navigation():
                         '_RL2RaL']
         path_list = []
         for var in global_var_list:
-            path_list.append('mapinfo'+var+'.pickle')
+            path_list.append('navigation\mapinfo'+var+'.pickle')
         var_dict = {}
         for i, path in enumerate(path_list):
             with open(path, 'rb') as f:
