@@ -149,7 +149,8 @@ class Navigation():
             lane_points_array_list = None
         return lane_points_array_list
 
-    def update(self, x, y, edgeID, laneIndex, DeadDistance):
+    def update(self, x, y, edgeID, laneIndex, ahead_lane_length):
+        DeadDistance = ahead_lane_length - DeadDistance_base
         if edgeID in self.edge_list:
             self.current_edge = edgeID
             self.current_index = laneIndex
@@ -341,13 +342,6 @@ def get_straight_points_array(x_list, y_list, phi_list):
     points_array[3,:] *= 5.
     return points_array
 
-def get_update_info(x, y):
-    edgeID, lanePosition, laneIndex = traci.simulation.convertRoad(x, y)
-    length = traci.lane.getLength(f'{edgeID}_{laneIndex}')
-    ahead_lane_length = length - lanePosition
-    DeadDistance = ahead_lane_length - DeadDistance_base
-    return edgeID, laneIndex, DeadDistance
-
 def get_bezier_connect(x1, y1, phi1, x4, y4, phi4):
     delta_x = abs(x4 - x1)
     delta_y = abs(y4 - y1)
@@ -391,21 +385,25 @@ def get_points_list_from_two_points(x1, y1, x2, y2):
 def scale_phi(phi):
     return np.mod(phi+np.pi,2*np.pi)-np.pi
 
+def get_update_info(x, y):
+    edgeID, lanePosition, laneIndex = traci.simulation.convertRoad(x, y)
+    length = traci.lane.getLength(f'{edgeID}_{laneIndex}')
+    ahead_lane_length = length - lanePosition
+    return edgeID, laneIndex, ahead_lane_length
 if __name__ == "__main__":
-    vehID='0'
+    vehID=0
     navi = Navigation(vehID)
     num = 1200
     import time
     time_list = []
-    navi.update_rou_xml()
     
-    traci.vehicle.add(vehID=vehID, routeID='self_route', departLane = 2, typeID="car_4")
+    traci.vehicle.add(vehID=str(vehID), routeID='self_route', departLane = 2, typeID="car_4")
     traci.simulationStep()
-    x, y = traci.vehicle.getPosition(vehID)
+    x, y = traci.vehicle.getPosition(str(vehID))
     for i in range(int(num)):        
-        edgeID, laneIndex, DeadDistance = get_update_info(x, y)
+        edgeID, laneIndex, ahead_lane_length = get_update_info(x, y)
         start = time.perf_counter_ns()
-        out_dict = navi.update(x, y, edgeID, laneIndex, DeadDistance)
+        out_dict = navi.update(x, y, edgeID, laneIndex, ahead_lane_length)
         end = time.perf_counter_ns()
         time_list.append(float(end - start)/10**6)
         points = out_dict
@@ -413,10 +411,10 @@ if __name__ == "__main__":
         y = points[0][0][1][4]
         phi = points[0][0][2][4]
         angle_in_sumo = scale_phi(-phi + np.pi/2)*180/np.pi
-        if edgeID==navi.edge_list[-1] and DeadDistance < num_ref_points*dis_interval:
+        if edgeID==navi.edge_list[-1] and ahead_lane_length < num_ref_points*dis_interval + DeadDistance_base:
             print('finished')
             break
-        traci.vehicle.moveToXY(vehID=vehID, edgeID=edgeID,lane = laneIndex, x=x, y=y, angle=angle_in_sumo)
+        traci.vehicle.moveToXY(vehID=str(vehID), edgeID=edgeID,lane = laneIndex, x=x, y=y, angle=angle_in_sumo)
         traci.simulationStep()
     traci.close()
 
